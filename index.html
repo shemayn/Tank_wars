@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tank Wars</title>
+    <title>Tank Wars - Epic 2D Tank Battle Game</title>
     <link rel="icon" href="assets/icons/gameicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -19,7 +20,7 @@
             <nav class="navbar">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/logo.png" alt="Tank Wars Logo">
+                        <img src="assets/images/tanklogo.png" alt="Tank Wars Logo">
                     </a>
                 </div>
                 
@@ -33,11 +34,7 @@
                 
                 <a href="login.html" class="btn login-btn">LOG IN</a>
                 
-                <div class="mobile-toggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                
             </nav>
         </div>
     </header>
@@ -85,7 +82,7 @@
                     <div class="feature-content">
                         <h3 class="feature-title">Epic Battles</h3>
                         <p>Engage in intense tank battles across diverse battlefields. Use strategy and firepower to dominate your enemies.</p>
-                        <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                     
                     </div>
                 </div>
                 
@@ -97,7 +94,7 @@
                     <div class="feature-content">
                         <h3 class="feature-title">Tank Customization</h3>
                         <p>Upgrade and customize your tanks with various weapons, armor, and special abilities to fit your playstyle.</p>
-                        <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                       
                     </div>
                 </div>
                 
@@ -109,7 +106,7 @@
                     <div class="feature-content">
                         <h3 class="feature-title">Multiplayer Mode</h3>
                         <p>Challenge friends or players worldwide in thrilling multiplayer matches. Climb the ranks and become a legend.</p>
-                        <a href="#" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        
                     </div>
                 </div>
             </div>
@@ -198,7 +195,7 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <a href="index.html" class="footer-logo-link">
-                        <img src="assets/images/logo.png" alt="Tank Wars Logo" class="footer-logo-img">
+                        <img src="assets/images/tanklogo.png" alt="Tank Wars Logo" class="footer-logo-img">
                     </a>
                     <p class="footer-tagline">The ultimate battlefield experience</p>
                 </div>
@@ -210,10 +207,24 @@
                         <a href="#about" class="footer-link">About Us</a>
                         <a href="#features" class="footer-link">Features</a>
                         <a href="#contact" class="footer-link">Contact</a>
-                        <a href="tank_wars_terms_and_conditions.html" class="footer-link">Terms of service</a>
-                        <a href="tank_wars_privacy_policy.html" class="footer-link">Privacy</a>
+                        <a id="privacyPolicyLink" class="footer-link">Privacy Policy</a>
+                        
                     </div>
                 </div>
+
+                <div id="privacyPolicyModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close-modal" id="closeModal">&times;</span>
+                      <h2>Privacy Policy</h2>
+                      <p> We care about your privacy. When you use our website, we may collect basic information like your username or email to improve your experience.<br><br>
+
+                        ◘ We don’t share your info with anyone.<br>
+                        
+                        ◘ We only use it to run the game and help you if needed.<br>
+                        
+                       ◘ We use cookies to make the website work better.</p>
+                    </div>
+                  </div>
                 
                 <div class="footer-social">
                     <h4 class="footer-heading">Connect With Us</h4>
@@ -268,6 +279,16 @@
           forum.appendChild(newPost);
           form.reset();
         });
+
+    const modal = document.getElementById("privacyPolicyModal");
+    const link = document.getElementById("privacyPolicyLink");
+    const closeModal = document.getElementById("closeModal");
+
+    link.onclick = () => modal.style.display = "block";
+    closeModal.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    }
       </script>
 </body>
 </html> 
