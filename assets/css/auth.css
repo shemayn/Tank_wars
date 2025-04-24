@@ -1,0 +1,414 @@
+/* Tank Wars - Authentication Pages Stylesheet 
+   Enhanced with CaneFly-inspired design elements
+*/
+
+:root {
+  --primary-color: #e03e00;
+  --primary-color-hover: #ff4500;
+  --dark-bg: #0a0a0a;
+  --light-text: #ffffff;
+  --border-radius: 8px;
+  --transition-speed: 0.4s;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('../images/war-theme-bg.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7));
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+.logo {
+  padding: 25px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo img {
+  height: 50px;
+  transition: transform var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo img:hover {
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 0 10px rgba(224, 62, 0, 0.5));
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 40px 20px 60px;
+}
+
+.auth-form {
+  background-color: rgba(26, 26, 26, 0.8);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 50px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--primary-color-hover));
+}
+
+.auth-form h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--light-text);
+  position: relative;
+}
+
+.auth-form h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  color: var(--light-text);
+  font-size: 16px;
+  transition: all var(--transition-speed) ease;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-group input:focus,
+.form-group input:not(:placeholder-shown) {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(224, 62, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 10px;
+  font-size: 12px;
+  background-color: rgba(26, 26, 26, 0.9);
+  padding: 0 5px;
+  color: var(--primary-color);
+}
+
+.form-group input::placeholder {
+  color: transparent;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+button[type="submit"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-color-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(224, 62, 0, 0.3);
+}
+
+button[type="submit"]:hover::after {
+  left: 100%;
+}
+
+.auth-links {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.auth-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.auth-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.auth-links a:hover {
+  color: var(--primary-color-hover);
+}
+
+.auth-links a:hover::after {
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 35px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.divider span {
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(224, 62, 0, 0.2);
+}
+
+.social-btn i {
+  font-size: 20px;
+  color: var(--light-text);
+  transition: transform 0.3s ease;
+}
+
+.social-btn:hover i {
+  transform: scale(1.2);
+}
+
+.forgot-password {
+  text-align: right;
+  margin: 15px 0 25px;
+}
+
+.forgot-password a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.forgot-password a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: width 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: var(--primary-color);
+}
+
+.forgot-password a:hover::after {
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+/* Loading Animation (inspired by CaneFly) */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+/* Form Validation Styles */
+.form-group input.error {
+  border-color: #ff3131;
+  box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.2);
+}
+
+.error-message {
+  color: #ff3131;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.visible {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .auth-form {
+    padding: 40px 25px;
+  }
+  
+  .auth-form h2 {
+    font-size: 1.8rem;
+  }
+  
+  .social-login {
+    gap: 15px;
+  }
+  
+  .social-btn {
+    width: 45px;
+    height: 45px;
+  }
+} 
