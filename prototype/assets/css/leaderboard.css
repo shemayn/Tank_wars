@@ -1,0 +1,188 @@
+/* Leaderboard Styles */
+.leaderboard-container {
+    padding: 4rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/leaderboard-bg.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.leaderboard-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.leaderboard-filters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-group label {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.filter-group select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.leaderboard-table {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-table th {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.leaderboard-table td {
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+}
+
+.rank-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.rank-badge.diamond {
+    background-color: #b9f2ff;
+    color: #000;
+}
+
+.rank-badge.gold {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.rank-badge.silver {
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+.rank-badge.bronze {
+    background-color: #cd7f32;
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-pagination {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4d4d;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-pagination:hover {
+    background-color: #ff3333;
+}
+
+.btn-pagination:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#page-info {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .leaderboard-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leaderboard-table {
+        padding: 1rem;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.leaderboard-table tbody tr {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.leaderboard-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.leaderboard-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.leaderboard-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.leaderboard-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.leaderboard-table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+.leaderboard-table tbody tr:nth-child(6) { animation-delay: 0.6s; }
+.leaderboard-table tbody tr:nth-child(7) { animation-delay: 0.7s; }
+.leaderboard-table tbody tr:nth-child(8) { animation-delay: 0.8s; }
+.leaderboard-table tbody tr:nth-child(9) { animation-delay: 0.9s; }
+.leaderboard-table tbody tr:nth-child(10) { animation-delay: 1s; } 
