@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Tank Wars</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/gameicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/images/logo.png" alt="Tank Wars Logo">
+        </a>
+    </div>
+    
+    <!-- Signup Form -->
+    <div class="auth-container">
+        <form class="auth-form">
+            <h2>Create Your Account</h2>
+            
+            <div class="form-group">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <label for="firstName">First Name</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <label for="lastName">Last Name</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="email">Email Address</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+            
+            <button type="submit">Sign Up</button>
+            
+            <div class="divider">
+                <span>OR SIGN UP WITH</span>
+            </div>
+            
+            <div class="social-login">
+                <a href="#" class="social-btn" title="Sign up with Google">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-btn" title="Sign up with Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-btn" title="Sign up with Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            
+            <div class="auth-links">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
